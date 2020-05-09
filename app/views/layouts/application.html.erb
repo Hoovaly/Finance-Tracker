@@ -16,9 +16,10 @@
 
   <body>
     <%= render "layouts/navbar"%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="jumbotron">
+      <%= render "layouts/messages"%>
+      <%= yield %>
+    </div>
     <%= render "layouts/footer"%>
   </body>
 </html>
