@@ -6,8 +6,9 @@
     <%= csp_meta_tag %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Finace-Tracker">
+    <meta name="description" content="Tets application for ruby on rails 6 development">
     <meta name="author" content="EMEIER">
+    <meta name="robot" content="nofollow">
 
     <%= stylesheet_link_tag 'application', 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,6 +16,8 @@
 
   <body>
     <%= render "layouts/navbar"%>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render "layouts/footer"%>
   </body>

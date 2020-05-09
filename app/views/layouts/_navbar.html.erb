@@ -18,9 +18,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Log in</a>
-          <a class="dropdown-item" href="#">Log out action</a>
+          <a class="dropdown-item" <%= link_to 'log out', destroy_user_session_path, method: :delete %></a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sign in else here</a>
+          <a class="dropdown-item" href="#">Sign in</a>
         </div>
       </li>
     </ul>
