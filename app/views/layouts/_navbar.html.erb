@@ -7,20 +7,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" <%= link_to 'Home', root_path %></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Stocks</a>
-      </li>
+      <% if current_user %>
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to 'My Portfolio', my_portfolio_path %></a>
+        </li>
+      <% end %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" <%= link_to 'Log in', new_user_session_path %></a>
-          <a class="dropdown-item" <%= link_to 'Log out', destroy_user_session_path, method: :delete %></a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" <%= link_to 'Sign in', new_user_registration_path %></a>
+          <% if current_user %>
+            <a class="dropdown-item" <%= link_to 'Log out', destroy_user_session_path, method: :delete %></a>
+          <% end %>
+          <% if !current_user %>
+            <a class="dropdown-item" <%= link_to 'Log in', new_user_session_path %></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" <%= link_to 'Sign in', new_user_registration_path %></a>
+          <% end %>
         </div>
       </li>
     </ul>
