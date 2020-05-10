@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-8">
+    <%= render "layouts/messages"%>
+    <% if @stock %>
+      <div class="alert-secondary">
+        <strong>Symbol: </strong><text> <%= @stock.ticker %></text>
+        <strong>Name: </strong><text> <%= @stock.name %></text>
+        <strong>Price: </strong><text> <%= @stock.last_price %></text>
+      </div>
+    <% end %>
+  </div>
+</div>
